@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ContactsViewController.fetchContacts():ContactsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contactList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactsViewController.viewDidLoad():ContactsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tabBarController!.tabBar.frame.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactsViewController.tableView(_:numberOfRowsInSection:):ContactsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contactListInUse[section].phoneNumbers.count">
+            </PersistentString>
+            <PersistentString
+               value = "contactListInUse[section]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

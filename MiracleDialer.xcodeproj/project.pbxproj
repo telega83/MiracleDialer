@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C090A51212DA49800462541 /* KeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C090A50212DA49800462541 /* KeysViewController.swift */; };
+		7C090A53212DB92500462541 /* DialpadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C090A52212DB92500462541 /* DialpadButton.swift */; };
+		7C090A55212DC7D200462541 /* BackspaceButon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C090A54212DC7D200462541 /* BackspaceButon.swift */; };
 		7C71AC0C212AC692003F5051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71AC0B212AC692003F5051 /* AppDelegate.swift */; };
 		7C71AC0E212AC692003F5051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71AC0D212AC692003F5051 /* ViewController.swift */; };
 		7C71AC11212AC692003F5051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C71AC0F212AC692003F5051 /* Main.storyboard */; };
 		7C71AC13212AC694003F5051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C71AC12212AC694003F5051 /* Assets.xcassets */; };
 		7C71AC16212AC694003F5051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C71AC14212AC694003F5051 /* LaunchScreen.storyboard */; };
 		7C71AC21212AC695003F5051 /* MiracleDialerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71AC20212AC695003F5051 /* MiracleDialerTests.swift */; };
+		7C71AC2C212B15AB003F5051 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71AC2B212B15AB003F5051 /* ContactsViewController.swift */; };
+		7C71AC2E212B2759003F5051 /* ContactEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71AC2D212B2758003F5051 /* ContactEntry.swift */; };
+		7C71AC30212C10AC003F5051 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71AC2F212C10AC003F5051 /* ContactTableViewCell.swift */; };
+		7CF31712212C6FFD00EAE112 /* PhoneNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF31711212C6FFD00EAE112 /* PhoneNumberTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C090A50212DA49800462541 /* KeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysViewController.swift; sourceTree = "<group>"; };
+		7C090A52212DB92500462541 /* DialpadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialpadButton.swift; sourceTree = "<group>"; };
+		7C090A54212DC7D200462541 /* BackspaceButon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceButon.swift; sourceTree = "<group>"; };
 		7C71AC08212AC692003F5051 /* MiracleDialer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiracleDialer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C71AC0B212AC692003F5051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C71AC0D212AC692003F5051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +46,10 @@
 		7C71AC1C212AC695003F5051 /* MiracleDialerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiracleDialerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C71AC20212AC695003F5051 /* MiracleDialerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiracleDialerTests.swift; sourceTree = "<group>"; };
 		7C71AC22212AC695003F5051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C71AC2B212B15AB003F5051 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		7C71AC2D212B2758003F5051 /* ContactEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntry.swift; sourceTree = "<group>"; };
+		7C71AC2F212C10AC003F5051 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		7CF31711212C6FFD00EAE112 /* PhoneNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,13 @@
 			children = (
 				7C71AC0B212AC692003F5051 /* AppDelegate.swift */,
 				7C71AC0D212AC692003F5051 /* ViewController.swift */,
+				7C71AC2D212B2758003F5051 /* ContactEntry.swift */,
+				7C090A52212DB92500462541 /* DialpadButton.swift */,
+				7C090A54212DC7D200462541 /* BackspaceButon.swift */,
+				7C71AC2F212C10AC003F5051 /* ContactTableViewCell.swift */,
+				7CF31711212C6FFD00EAE112 /* PhoneNumberTableViewCell.swift */,
+				7C71AC2B212B15AB003F5051 /* ContactsViewController.swift */,
+				7C090A50212DA49800462541 /* KeysViewController.swift */,
 				7C71AC0F212AC692003F5051 /* Main.storyboard */,
 				7C71AC12212AC694003F5051 /* Assets.xcassets */,
 				7C71AC14212AC694003F5051 /* LaunchScreen.storyboard */,
@@ -198,7 +219,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C71AC0E212AC692003F5051 /* ViewController.swift in Sources */,
+				7C090A53212DB92500462541 /* DialpadButton.swift in Sources */,
+				7C71AC30212C10AC003F5051 /* ContactTableViewCell.swift in Sources */,
 				7C71AC0C212AC692003F5051 /* AppDelegate.swift in Sources */,
+				7C090A51212DA49800462541 /* KeysViewController.swift in Sources */,
+				7CF31712212C6FFD00EAE112 /* PhoneNumberTableViewCell.swift in Sources */,
+				7C090A55212DC7D200462541 /* BackspaceButon.swift in Sources */,
+				7C71AC2C212B15AB003F5051 /* ContactsViewController.swift in Sources */,
+				7C71AC2E212B2759003F5051 /* ContactEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

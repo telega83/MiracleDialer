@@ -1,24 +1,448 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Uo-Gg-6QC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Contacts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ContactsViewController" customModule="MiracleDialer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy6-dc-EcE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" smartInsertDeleteType="no"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tdc-1a-yoK">
+                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Wnq-q2-CcR" customClass="ContactTableViewCell" customModule="MiracleDialer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wnq-q2-CcR" id="3Ik-VX-k1W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPS-V6-fMN">
+                                                    <rect key="frame" x="14" y="13" width="347" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="WgW-mI-1c4">
+                                                    <rect key="frame" x="341" y="11" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="2xD-Il-Nhs"/>
+                                                        <constraint firstAttribute="width" constant="20" id="HDv-qi-bb3"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WgW-mI-1c4" secondAttribute="trailing" constant="14" id="6eB-Ms-V9f"/>
+                                                <constraint firstItem="iPS-V6-fMN" firstAttribute="bottom" secondItem="3Ik-VX-k1W" secondAttribute="bottomMargin" id="8z9-id-RVD"/>
+                                                <constraint firstItem="WgW-mI-1c4" firstAttribute="top" secondItem="3Ik-VX-k1W" secondAttribute="top" constant="11" id="PHd-VU-frr"/>
+                                                <constraint firstItem="iPS-V6-fMN" firstAttribute="centerX" secondItem="3Ik-VX-k1W" secondAttribute="centerX" id="WcH-SR-rRQ"/>
+                                                <constraint firstItem="iPS-V6-fMN" firstAttribute="leading" secondItem="3Ik-VX-k1W" secondAttribute="leadingMargin" constant="-1" id="zqO-ZA-AR6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgArrow" destination="WgW-mI-1c4" id="7c1-7i-0Mk"/>
+                                            <outlet property="lblName" destination="iPS-V6-fMN" id="bem-a1-E6e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subcell" id="ajd-yg-QGp" customClass="PhoneNumberTableViewCell" customModule="MiracleDialer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ajd-yg-QGp" id="BDt-Iz-tki">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVQ-kG-qgL">
+                                                    <rect key="frame" x="40" y="5" width="50" height="34"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="btnPhoneNumberTapped:" destination="ajd-yg-QGp" eventType="touchUpInside" id="VjN-hu-4vc"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RVQ-kG-qgL" secondAttribute="trailing" id="Evq-9x-kLQ"/>
+                                                <constraint firstItem="RVQ-kG-qgL" firstAttribute="leading" secondItem="BDt-Iz-tki" secondAttribute="leading" constant="40" id="Ht0-Pa-rVj"/>
+                                                <constraint firstAttribute="bottom" secondItem="RVQ-kG-qgL" secondAttribute="bottom" constant="5" id="S9f-LR-DZi"/>
+                                                <constraint firstItem="RVQ-kG-qgL" firstAttribute="top" secondItem="BDt-Iz-tki" secondAttribute="top" constant="5" id="lV3-uk-iF7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnPhoneNumber" destination="RVQ-kG-qgL" id="Qk2-b9-PTh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vy6-dc-EcE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="68B-07-CEP"/>
+                            <constraint firstItem="Vy6-dc-EcE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ETy-za-TtU"/>
+                            <constraint firstItem="Tdc-1a-yoK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="J2G-fa-VQR"/>
+                            <constraint firstItem="Tdc-1a-yoK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MFA-99-OPw"/>
+                            <constraint firstItem="Tdc-1a-yoK" firstAttribute="top" secondItem="Vy6-dc-EcE" secondAttribute="bottom" id="Pcl-1A-2tx"/>
+                            <constraint firstItem="Vy6-dc-EcE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eVh-Y7-HT2"/>
+                            <constraint firstItem="Tdc-1a-yoK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k4B-Oh-BCG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="book" id="Ibs-Lg-L0N"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Vy6-dc-EcE" id="Wkp-M9-RZR"/>
+                        <outlet property="tableView" destination="Tdc-1a-yoK" id="Pde-Ap-W7D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="400.80000000000001" y="44.527736131934034"/>
+        </scene>
+        <!--Keys-->
+        <scene sceneID="0XW-Ny-fbP">
+            <objects>
+                <viewController id="q2w-Te-aVc" customClass="KeysViewController" customModule="MiracleDialer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sYO-m0-jqj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuN-ga-feC" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="74" y="118" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="agC-f5-dni"/>
+                                    <constraint firstAttribute="width" constant="70" id="hZJ-Wh-jrV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="uIc-zo-Pfq"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="alz-JU-Cvf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-to-AQz" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="152" y="118" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="7EI-75-CTX"/>
+                                    <constraint firstAttribute="width" constant="70" id="cwa-lK-tf9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="1H2-7h-zg8"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="P6f-vI-rtW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaL-Me-OpF" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="230" y="118" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="paj-iT-E6S"/>
+                                    <constraint firstAttribute="width" constant="70" id="wXx-8Q-mMG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="c3G-B9-4Lj"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="mud-qF-nGS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMR-pE-ckn" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="74" y="196" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1Mc-V8-2Ra"/>
+                                    <constraint firstAttribute="height" constant="70" id="HjL-58-JzM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="apb-6Y-M1X"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="k1J-eM-PqZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caI-IE-nam" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="152" y="196" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="RgL-rn-vOe"/>
+                                    <constraint firstAttribute="width" constant="70" id="uA9-0Q-TAI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="l23-r5-esw"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="cCU-pY-Npw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2b-JC-6tW" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="230" y="196" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Vrw-nD-mhF"/>
+                                    <constraint firstAttribute="width" constant="70" id="zrK-Gf-tyI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="qwk-7p-fvh"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="MhB-u7-wmx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dze-V2-0w3" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="74" y="274" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="jvG-Sh-SS0"/>
+                                    <constraint firstAttribute="height" constant="70" id="qhb-nr-7SW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="tSw-Mk-BQl"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="Wvk-Ir-Uss"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3b-92-NOq" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="152" y="274" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="oRF-70-FFY"/>
+                                    <constraint firstAttribute="height" constant="70" id="vuD-gP-XLu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="crg-VT-7Yj"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="rZn-y3-Kgs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3I-wJ-4ap" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="230" y="274" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="3gx-Rq-XVO"/>
+                                    <constraint firstAttribute="width" constant="70" id="uNW-PG-oGr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="ord-rI-qWX"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="P93-pk-NyS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaQ-8b-gCn" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="74" y="352" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="b5F-32-TwX"/>
+                                    <constraint firstAttribute="height" constant="70" id="bwO-vb-pMT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="*">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="ojw-Ag-T8c"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="e7A-sM-7ce"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3M6-e7-41A" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="152" y="352" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="c0P-TW-w2P"/>
+                                    <constraint firstAttribute="height" constant="70" id="lsg-rC-c1O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="+0">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="QqR-qA-6Tz"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="TW6-xd-wzy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LW2-Ml-ZBu" customClass="DialpadButton" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="230" y="352" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="cWt-co-IjL"/>
+                                    <constraint firstAttribute="width" constant="70" id="gOg-R4-Y9e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <state key="normal" title="#">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnNumberTapped:" destination="q2w-Te-aVc" eventType="touchDown" id="MLE-YV-D0u"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchDown" id="6TK-UM-kl4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLv-3B-Cfm">
+                                <rect key="frame" x="145" y="430" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="SbM-BM-Gsz"/>
+                                    <constraint firstAttribute="width" constant="85" id="ao9-CW-yOY"/>
+                                </constraints>
+                                <state key="normal" image="call"/>
+                                <connections>
+                                    <action selector="btnCallTapped:" destination="q2w-Te-aVc" eventType="touchUpInside" id="aA7-6D-IjE"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-Bg-dXc">
+                                <rect key="frame" x="109" y="5" width="157" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="Iby-3J-9tT"/>
+                                    <constraint firstAttribute="height" constant="65" id="yr8-kX-gCg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVe-E0-3hL">
+                                <rect key="frame" x="15" y="75" width="345" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="lTL-6o-FKh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6A-A4-Nv8" customClass="BackspaceButon" customModule="MiracleDialer" customModuleProvider="target">
+                                <rect key="frame" x="240" y="447" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0jC-5W-KMX"/>
+                                    <constraint firstAttribute="height" constant="50" id="nPo-JB-VFf"/>
+                                </constraints>
+                                <state key="normal" image="backspace"/>
+                                <connections>
+                                    <action selector="btnBackspaceTapped:" destination="q2w-Te-aVc" eventType="touchUpInside" id="Dd2-SG-4CS"/>
+                                    <action selector="numberWasChanged:" destination="q2w-Te-aVc" eventType="touchUpInside" id="Awz-My-X8g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LvY-Hv-LJq" firstAttribute="trailing" secondItem="zVe-E0-3hL" secondAttribute="trailing" constant="15" id="0O8-Nr-mrl"/>
+                            <constraint firstItem="caI-IE-nam" firstAttribute="centerY" secondItem="nMR-pE-ckn" secondAttribute="centerY" id="49z-bw-EgF"/>
+                            <constraint firstItem="w3b-92-NOq" firstAttribute="top" secondItem="caI-IE-nam" secondAttribute="bottom" constant="8" id="4T0-jq-RHN"/>
+                            <constraint firstItem="LW2-Ml-ZBu" firstAttribute="centerY" secondItem="yaQ-8b-gCn" secondAttribute="centerY" id="68g-ZR-fqH"/>
+                            <constraint firstItem="FaL-Me-OpF" firstAttribute="centerY" secondItem="GuN-ga-feC" secondAttribute="centerY" id="7eF-ge-tFg"/>
+                            <constraint firstItem="eWR-to-AQz" firstAttribute="centerY" secondItem="GuN-ga-feC" secondAttribute="centerY" id="BVI-nC-9P0"/>
+                            <constraint firstItem="w3b-92-NOq" firstAttribute="centerY" secondItem="Dze-V2-0w3" secondAttribute="centerY" id="C2K-cQ-B9c"/>
+                            <constraint firstItem="zVe-E0-3hL" firstAttribute="top" secondItem="9XW-Bg-dXc" secondAttribute="bottom" constant="5" id="H5Y-uH-2Yq"/>
+                            <constraint firstItem="aLv-3B-Cfm" firstAttribute="top" secondItem="3M6-e7-41A" secondAttribute="bottom" constant="8" id="IB3-5l-3RJ"/>
+                            <constraint firstItem="q3I-wJ-4ap" firstAttribute="leading" secondItem="w3b-92-NOq" secondAttribute="trailing" constant="8" id="N9x-DQ-1ID"/>
+                            <constraint firstItem="9XW-Bg-dXc" firstAttribute="top" secondItem="sYO-m0-jqj" secondAttribute="top" constant="5" id="PdK-mm-Qk2"/>
+                            <constraint firstItem="caI-IE-nam" firstAttribute="centerX" secondItem="sYO-m0-jqj" secondAttribute="centerX" id="QA8-A0-TOF"/>
+                            <constraint firstItem="3M6-e7-41A" firstAttribute="leading" secondItem="yaQ-8b-gCn" secondAttribute="trailing" constant="8" id="QJt-9F-aBp"/>
+                            <constraint firstItem="zVe-E0-3hL" firstAttribute="leading" secondItem="LvY-Hv-LJq" secondAttribute="leading" constant="15" id="ZQ7-Xp-4xp"/>
+                            <constraint firstItem="3M6-e7-41A" firstAttribute="top" secondItem="w3b-92-NOq" secondAttribute="bottom" constant="8" id="Zuy-KK-DRI"/>
+                            <constraint firstItem="FaL-Me-OpF" firstAttribute="leading" secondItem="eWR-to-AQz" secondAttribute="trailing" constant="8" id="a93-wQ-ZfW"/>
+                            <constraint firstItem="M2b-JC-6tW" firstAttribute="leading" secondItem="caI-IE-nam" secondAttribute="trailing" constant="8" id="ci8-0D-QNg"/>
+                            <constraint firstItem="A6A-A4-Nv8" firstAttribute="centerY" secondItem="aLv-3B-Cfm" secondAttribute="centerY" id="d13-uM-8fy"/>
+                            <constraint firstItem="LW2-Ml-ZBu" firstAttribute="leading" secondItem="3M6-e7-41A" secondAttribute="trailing" constant="8" id="eeE-wH-1kY"/>
+                            <constraint firstItem="3M6-e7-41A" firstAttribute="centerX" secondItem="sYO-m0-jqj" secondAttribute="centerX" id="hGH-tc-ZbW"/>
+                            <constraint firstItem="aLv-3B-Cfm" firstAttribute="centerX" secondItem="sYO-m0-jqj" secondAttribute="centerX" id="hnB-IU-X2H"/>
+                            <constraint firstItem="w3b-92-NOq" firstAttribute="leading" secondItem="Dze-V2-0w3" secondAttribute="trailing" constant="8" id="iNR-Ek-2Xx"/>
+                            <constraint firstItem="caI-IE-nam" firstAttribute="top" secondItem="eWR-to-AQz" secondAttribute="bottom" constant="8" id="jhr-ch-FhW"/>
+                            <constraint firstItem="eWR-to-AQz" firstAttribute="top" secondItem="zVe-E0-3hL" secondAttribute="bottom" constant="14" id="kdt-8h-Epx"/>
+                            <constraint firstItem="eWR-to-AQz" firstAttribute="leading" secondItem="GuN-ga-feC" secondAttribute="trailing" constant="8" id="lNW-Et-N1w"/>
+                            <constraint firstItem="q3I-wJ-4ap" firstAttribute="centerY" secondItem="Dze-V2-0w3" secondAttribute="centerY" id="oFh-4b-fm7"/>
+                            <constraint firstItem="aLv-3B-Cfm" firstAttribute="centerX" secondItem="sYO-m0-jqj" secondAttribute="centerX" id="oHd-kH-7vx"/>
+                            <constraint firstItem="A6A-A4-Nv8" firstAttribute="leading" secondItem="aLv-3B-Cfm" secondAttribute="trailing" constant="10" id="rT2-ci-KCl"/>
+                            <constraint firstItem="9XW-Bg-dXc" firstAttribute="centerX" secondItem="sYO-m0-jqj" secondAttribute="centerX" id="rbB-7P-N3s"/>
+                            <constraint firstItem="w3b-92-NOq" firstAttribute="centerX" secondItem="sYO-m0-jqj" secondAttribute="centerX" id="sHH-hZ-n2s"/>
+                            <constraint firstItem="M2b-JC-6tW" firstAttribute="centerY" secondItem="nMR-pE-ckn" secondAttribute="centerY" id="t8e-bt-aHd"/>
+                            <constraint firstItem="3M6-e7-41A" firstAttribute="centerY" secondItem="yaQ-8b-gCn" secondAttribute="centerY" id="tk8-42-xO6"/>
+                            <constraint firstItem="eWR-to-AQz" firstAttribute="centerX" secondItem="sYO-m0-jqj" secondAttribute="centerX" id="uec-CL-W0L"/>
+                            <constraint firstItem="caI-IE-nam" firstAttribute="leading" secondItem="nMR-pE-ckn" secondAttribute="trailing" constant="8" id="zLu-as-IF1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LvY-Hv-LJq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Keys" image="keypad" id="oEI-vq-XMW"/>
+                    <connections>
+                        <outlet property="btnBackspace" destination="A6A-A4-Nv8" id="W6S-ca-ika"/>
+                        <outlet property="btnCall" destination="aLv-3B-Cfm" id="hXQ-fc-qAf"/>
+                        <outlet property="btnZero" destination="3M6-e7-41A" id="V4Z-uf-24x"/>
+                        <outlet property="lblNumber" destination="zVe-E0-3hL" id="t14-KN-Llx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VzC-Ef-Olu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656.79999999999995" y="776.76161919040487"/>
+        </scene>
+        <!--Blacklist-->
+        <scene sceneID="qf9-OT-QEt">
+            <objects>
+                <viewController id="4lX-4u-NqA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T5J-x5-SDD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="FfV-oC-YL8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Blacklist" image="shield" id="aHf-Gu-FdN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iuI-pM-WFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="1521"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ksT-Th-LCb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1Uo-Gg-6QC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UHj-qk-NcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="38g-CK-H2B"/>
+                        <segue destination="q2w-Te-aVc" kind="relationship" relationship="viewControllers" id="pgq-Ph-E6B"/>
+                        <segue destination="4lX-4u-NqA" kind="relationship" relationship="viewControllers" id="m9d-3Y-TGv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ki8-CK-lZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538.39999999999998" y="44.527736131934034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow_down" width="48" height="48"/>
+        <image name="backspace" width="64" height="64"/>
+        <image name="book" width="32" height="32"/>
+        <image name="call" width="120" height="120"/>
+        <image name="keypad" width="40" height="40"/>
+        <image name="logo" width="1366" height="712"/>
+        <image name="shield" width="32" height="32"/>
+    </resources>
 </document>

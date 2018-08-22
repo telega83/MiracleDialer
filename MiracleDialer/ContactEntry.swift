@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct ContactEntry {
+    var id: String
+    var expanded: Bool
+    var givenName: String
+    var familyName: String
+    var phoneNumbers: [String]
+}
