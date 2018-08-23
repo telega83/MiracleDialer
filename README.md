@@ -1,6 +1,6 @@
 # iOS simple dialer
 
-##Instructions
+## Instructions
 Clone repository
 ```
 git@github.com:telega83/MiracleDialer.git
