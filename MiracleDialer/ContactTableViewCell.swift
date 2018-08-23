@@ -22,9 +22,9 @@ class ContactTableViewCell: UITableViewCell {
     
     func setupCell(expanded: Bool, givenName: String, familyName: String) {
         if expanded {
-            imgArrow.image = UIImage(named: "arrow_up")
+            imgArrow.image = UIImage(named: "collapse")
         } else {
-            imgArrow.image = UIImage(named: "arrow_down")
+            imgArrow.image = UIImage(named: "expand")
         }
         
         if givenName == "" {

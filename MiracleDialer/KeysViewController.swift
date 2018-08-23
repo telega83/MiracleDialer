@@ -35,12 +35,14 @@ class KeysViewController: UIViewController {
         checkPhoneNumber()
     }
     
+    //Make a call
     @IBAction func btnCallTapped(_ sender: Any) {
         if let url = URL(string: "tel://\(lblNumber.text!)") {
             UIApplication.shared.open(url)
         }
     }
     
+    //Long gesture recognizer action for 0 button for "+" symbol
     @objc func longTapZero(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
             lblNumber.text!.removeLast()
@@ -49,6 +51,7 @@ class KeysViewController: UIViewController {
         }
     }
     
+    ///Long gesture recognizer action for backspace
     @objc func longTapBackspace(_ sender: UIGestureRecognizer) {
         if sender.state == .began {
             lblNumber.text! = ""
@@ -73,8 +76,6 @@ class KeysViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         //Long gesture recognizer for 0 button for "+" symbol
         let longGestureZero = UILongPressGestureRecognizer(target: self, action: #selector(longTapZero(_:)))

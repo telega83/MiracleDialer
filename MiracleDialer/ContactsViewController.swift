@@ -14,7 +14,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var searchBar: UISearchBar!
     
     //Allowed character set for phone numbers
-    let allowedCharset = CharacterSet.decimalDigits.union(CharacterSet(charactersIn: "+"))
+    let allowedCharset = CharacterSet.alphanumerics.union(CharacterSet(charactersIn: "+"))
     
     var contactList = [ContactEntry]()
     var filteredContactList = [ContactEntry]()
@@ -156,13 +156,12 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.layer.cornerRadius = 5
-        
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        //Notifications to reduce table view height while keyboard id displayed
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     

@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ContactsViewController.fetchContacts():ContactsViewController.swift">
+         contextName = "ContactsViewController.tableView(_:numberOfRowsInSection:):ContactsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "contactList">
+               value = "contactListInUse[section].phoneNumbers.count">
+            </PersistentString>
+            <PersistentString
+               value = "contactListInUse[section]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,13 +22,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ContactsViewController.tableView(_:numberOfRowsInSection:):ContactsViewController.swift">
+         contextName = "ContactsViewController.fetchContacts():ContactsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "contactListInUse[section].phoneNumbers.count">
+               value = "contactList">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ContactsViewController.fetchContacts():ContactsViewController.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "contactListInUse[section]">
+               value = "contact.contactType.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
